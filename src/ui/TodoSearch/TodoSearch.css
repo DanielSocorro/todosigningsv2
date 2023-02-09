@@ -1,0 +1,22 @@
+.TodoSearch {
+font-family: 'Josefin Sans', sans-serif;
+font-size: 20px;
+background-color:whitesmoke;
+text-align: center;
+border-radius: 10px;
+box-shadow: 0px 10px 10px rgba(27, 34, 49, 15%);
+display: flex;
+width: 239px;
+height: 30px;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 20px;
+border: 0px;
+outline-color: rgb(146, 145, 145);
+align-content: space-evenly;
+}
+
+.TodoSearch:disabled {
+    opacity: 25%;
+}
+ 

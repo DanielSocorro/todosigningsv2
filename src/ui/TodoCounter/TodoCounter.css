@@ -1,0 +1,40 @@
+.TodoCounter {
+    background-image:url(../img/mu-logo.png);
+    background-repeat: no-repeat;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height: 27vh;
+    text-align: center;
+    margin-left: 2%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+};
+
+.TodoCounter--loading {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 29px;
+    width: 336px;
+    margin-left: 39vh;
+    margin-right: 100px;
+    margin-top: -131px;
+    height: 19vh;
+    opacity: 25%;
+}
+
+  @media (min-width: 720px) {
+    .TodoCounter {
+      width: 50%;
+      font-size: 36px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  @media (min-width: 720px) {
+    .TodoCounter--loading {
+      width: 50%;
+      font-size: 36px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
