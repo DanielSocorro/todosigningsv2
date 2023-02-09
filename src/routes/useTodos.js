@@ -1,4 +1,3 @@
-import { func } from "prop-types";
 import React from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
@@ -59,12 +58,12 @@ function useTodos() {
        totalTodos, 
        completedTodos, 
        searchValue, 
-       setSearchValue,
        searchedTodos,
+       openModal,
+       setSearchValue,
        addTodo, 
        completeTodo, 
        deleteTodo, 
-       openModal,
        setOpenModal,
        sincronizeTodos,
       };

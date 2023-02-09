@@ -22,9 +22,9 @@ function HomePage() {
     totalTodos,
     completedTodos,
     searchValue,
+    editTodo,
     completeTodo,
     deleteTodo,
-    editTodo,
     setOpenModal,
     setSearchValue,
     addTodo,
@@ -64,9 +64,9 @@ function HomePage() {
             key={todo.id}
             text={todo.text}
             completed={todo.completed}
-            onEdit={() => console.log('edit todo')}
-            onComplete={() => completeTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
+            onEdit={() => editTodo(todo.text)}
+            onComplete={() => completeTodo(todo.id)}
+            onDelete={() => deleteTodo(todo.id)}
           />
           )}
      </TodoList>
