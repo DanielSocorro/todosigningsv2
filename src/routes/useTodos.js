@@ -52,22 +52,27 @@ function useTodos() {
       saveTodos(newTodos);
     };
 
-    return {
-       loading, 
-       error,
-       totalTodos, 
-       completedTodos, 
-       searchValue, 
-       searchedTodos,
-       openModal,
-       setSearchValue,
-       addTodo, 
-       completeTodo, 
-       deleteTodo, 
-       setOpenModal,
-       sincronizeTodos,
-      };
+    const state = {
+      error,
+      loading, 
+      searchedTodos,
+      totalTodos, 
+      completedTodos, 
+      openModal,
+      searchValue, 
     };
+    
+    const stateUpdaters = {
+      setSearchValue,
+      addTodo, 
+      completeTodo, 
+      deleteTodo, 
+      setOpenModal,
+      sincronizeTodos,
+    };
+
+    return { state, stateUpdaters };
+  }
 
     function newTodoId(todolist) {
       const idList = todolist.map(todo => todo.id);

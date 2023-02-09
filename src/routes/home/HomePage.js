@@ -14,22 +14,27 @@ import { Modal } from "../../ui/Modal";
 import { ChangeAlert } from "../../ui/ChangeAlert";
 
 function HomePage() {
+  const { state, stateUpdaters } = useTodos();
+
   const {
     error,
     loading,
     searchedTodos,
-    openModal,
     totalTodos,
     completedTodos,
+    openModal,
     searchValue,
     editTodo,
+  } = state;
+
+  const {
+    setOpenModal,
     completeTodo,
     deleteTodo,
-    setOpenModal,
-    setSearchValue,
     addTodo,
+    setSearchValue,
     sincronizeTodos,
-  } = useTodos();
+  } = stateUpdaters;
 
 
   return (
