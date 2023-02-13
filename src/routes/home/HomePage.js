@@ -26,12 +26,11 @@ function HomePage() {
     completedTodos,
     //openModal,
     searchValue,
-    editTodo,
   } = state;
 
   const {
     //setOpenModal,
-
+    // addTodo,
     completeTodo,
     deleteTodo,
     setSearchValue,
@@ -71,7 +70,7 @@ function HomePage() {
             key={todo.id}
             text={todo.text}
             completed={todo.completed}
-            onEdit={() => navigate('/edit/' + todo.id)}
+            onEdit={() => navigate('/edit/')}
             onComplete={() => completeTodo(todo.id)}
             onDelete={() => deleteTodo(todo.id)}
           />
@@ -88,7 +87,7 @@ function HomePage() {
       )} */}
 
       <CreateTodoButton 
-      onClick={() => navigate('../new/NewTodoPage.js')}
+      onClick={() => navigate('/new')}
      // setOpenModal={setOpenModal} 
      />
 
