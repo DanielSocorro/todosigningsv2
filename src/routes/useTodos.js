@@ -20,7 +20,7 @@ function useTodos() {
     if (!searchValue.length >= 1) {
       searchedTodos = todos;
     } else { 
-        searchedTodos = todos.filter((todo) => {
+        searchedTodos = todos.filter(todo => {
         const todoText = todo.text.toLowerCase();
         const searchText = searchValue.toLowerCase();
         return todoText.includes(searchText);
@@ -53,13 +53,13 @@ function useTodos() {
     };
 
     const state = {
-      error,
       loading, 
-      searchedTodos,
+      error,
       totalTodos, 
       completedTodos, 
-      openModal,
       searchValue, 
+      searchedTodos,
+      openModal,
     };
     
     const stateUpdaters = {

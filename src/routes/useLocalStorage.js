@@ -28,7 +28,6 @@ function useLocalStorage(itemName, initialValue) {
 
     const onSincronize = () => dispatch({
       type: actionTypes.sincronize,
-      payload: item,
     });
 
     React.useEffect(() => {
@@ -47,12 +46,9 @@ function useLocalStorage(itemName, initialValue) {
         onSuccess(parsedItem);
         } catch(error) {
           onError(error);
-        } finally {
-          sincronizeItem();
-        }
+        } 
       }, 1000);
     }, [sincronizedItem]);
-  
   
     const  saveItem = (newItem) => {
      try {
@@ -106,11 +102,11 @@ function useLocalStorage(itemName, initialValue) {
     },
     [actionTypes.save]: {
       ...state,
-      item:payload,
+      item: payload,
     },
     [actionTypes.sincronize]: {
       ...state,
-      sincronizeItem: false,
+      sincronizedItem: false,
       loading: true,
     },
   });
