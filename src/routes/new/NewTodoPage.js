@@ -8,7 +8,6 @@ function NewTodoPage() {
         submitText="Add"
         submitEvent={() => console.log('call to addTodo')}
         />
-
     );
 }
 

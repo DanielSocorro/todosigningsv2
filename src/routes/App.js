@@ -5,7 +5,6 @@ import { HomePage } from "./home/HomePage";
 import { NewTodoPage } from "./new/NewTodoPage";
 
 function App() {
-  
   return (
    <HashRouter>
     <Routes>
@@ -16,7 +15,6 @@ function App() {
     </Routes>
    </HashRouter>
   );
-
 }
 
 export { App };
