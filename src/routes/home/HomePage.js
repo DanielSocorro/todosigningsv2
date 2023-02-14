@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router";
 import { useTodos } from "../useTodos";
 import { TodoHeader } from "../../ui/TodoHeader";
 import { TodoCounter } from "../../ui/TodoCounter";
@@ -12,7 +13,6 @@ import { TodoForm } from "../../ui/TodoForm";
 import { CreateTodoButton } from "../../ui/CreateTodoButton";
 import { Modal } from "../../ui/Modal";
 import { ChangeAlert } from "../../ui/ChangeAlert";
-import { useNavigate } from "react-router";
 
 function HomePage() {
   const navigate = useNavigate;

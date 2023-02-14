@@ -35,7 +35,7 @@ function TodoForm(props) {
                     Cancel
                    </button>
                    <button 
-                   className="TodoForm-button-add"
+                   className="TodoForm-buttonTodoForm-button--add"
                    type="submit"
                    >
                       {props.submitText}
