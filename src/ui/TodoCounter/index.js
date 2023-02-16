@@ -10,3 +10,6 @@ function TodoCounter({ totalTodos, completedTodos, loading}) {
  }
 
  export { TodoCounter };
+
+
+ 

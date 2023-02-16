@@ -15,7 +15,7 @@ import { Modal } from "../../ui/Modal";
 import { ChangeAlert } from "../../ui/ChangeAlert";
 
 function HomePage() {
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const { state, stateUpdaters } = useTodos();
 
   const {

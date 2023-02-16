@@ -1,33 +1,35 @@
 import React from "react";
 
 function useLocalStorage(itemName, initialValue) {
-    const [state, dispatch] = React.useReducer(reducer, initialState({ initialValue }));
+    const [state, dispatch] = React.useReducer(
+      reducer,
+       initialState({ initialValue }));
 
     const {
       sincronizedItem,
       error,
       loading,
-      item,
+      item
     } = state;
 
     //action creators
     const onError = (error) => dispatch({
       type: actionTypes.error,
-      payload: error,
+      payload: error
     });
 
     const onSuccess = (item) => dispatch({
       type: actionTypes.success,
-      payload: item,
+      payload: item
     });
 
     const onSave = (item) => dispatch({
       type: actionTypes.save,
-      payload: item,
+      payload: item
     });
 
     const onSincronize = () => dispatch({
-      type: actionTypes.sincronize,
+      type: actionTypes.sincronize 
     });
 
     React.useEffect(() => {
@@ -69,7 +71,7 @@ function useLocalStorage(itemName, initialValue) {
       saveItem,
       loading,
       error,
-      sincronizeItem,
+      sincronizeItem
     };
   }
 
@@ -77,7 +79,7 @@ function useLocalStorage(itemName, initialValue) {
     sincronizedItem: true,
     error: false,
     loading: true,
-    item: initialValue,
+    item: initialValue
   });
 
 
@@ -85,29 +87,29 @@ function useLocalStorage(itemName, initialValue) {
     error: 'ERROR',
     success: 'SUCCESS',
     save: 'SAVE',
-    sincronize: 'SINCRONIZE',
+    sincronize: 'SINCRONIZE'
   };
 
   const reducerObject = (state, payload) => ({
     [actionTypes.error]: {
       ...state,
-      error: true,
+      error: true
     },
     [actionTypes.success]: {
       ...state,
       error: false,
       loading: false,
       sincronizedItem: true,
-      item: payload,
+      item: payload
     },
     [actionTypes.save]: {
       ...state,
-      item: payload,
+      item: payload
     },
     [actionTypes.sincronize]: {
       ...state,
       sincronizedItem: false,
-      loading: true,
+      loading: true
     },
   });
 
