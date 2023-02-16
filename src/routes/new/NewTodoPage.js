@@ -1,12 +1,15 @@
 import React from "react";
 import { TodoForm } from "../../ui/TodoForm";
+import { useTodos } from "../useTodos";
 
 function NewTodoPage() {
+    const { stateUpdaters } = useTodos();
+    const { addTodo } = stateUpdaters;
     return (
         <TodoForm
         label="Add your new signing"
         submitText="Add"
-        submitEvent={() => console.log('call to addTodo')}
+        submitEvent={(text) => addTodo(text)}
         />
     );
 }
