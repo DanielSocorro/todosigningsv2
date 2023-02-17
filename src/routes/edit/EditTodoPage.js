@@ -1,9 +1,10 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { TodoForm } from "../../ui/TodoForm";
 import { useTodos } from "../useTodos";
 
 function EditTodoPage() {
+    const location = useLocation();
     const params = useParams();
     const id = Number(params.id);
 
@@ -11,19 +12,26 @@ function EditTodoPage() {
     const { loading, getTodo } = state;
     const { editTodo } = stateUpdaters;
 
-    if (loading) {
-        return <p>Loading...</p>
+    let todoText;
+    if (location.state?.todo) {
+        todoText = location.state.todo.text; 
+    } else if (loading) {
+      return <p>Loading...</p>
     } else {
       const todo = getTodo(id);
-      return (
-            <TodoForm
-            label="Edit your signing"
-            defaultTodoText={todo.text}
-            submitText="Edit signing"
-            submitEvent={(newText) => editTodo(id, newText)}
-            />
-        );
+      todoText = todo.text;
     }   
+
+
+
+    return (
+          <TodoForm
+          label="Edit your signing"
+          defaultTodoText={todoText}
+          submitText="Edit signing"
+          submitEvent={(newText) => editTodo(id, newText)}
+          />
+      );
 }
 
 export { EditTodoPage };
