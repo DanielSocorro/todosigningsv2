@@ -4,7 +4,8 @@ import './TodoForm.css';
 
 function TodoForm(props) {
     const navigate = useNavigate();
-    const [newTodoValue, setNewTodoValue] = React.useState('');
+    const [newTodoValue, setNewTodoValue] 
+    = React.useState(props.defaultTodoText ||'');
 
     const onChange = (event) => {
         setNewTodoValue(event.target.value);
@@ -28,14 +29,14 @@ function TodoForm(props) {
                />
                    <div className="TodoForm-buttonContainer">
                    <button
-                   className="TodoForm-button TodoForm-button--cancel"
+                   className="TodoForm-button-cancel"
                    type="button"
                    onClick={onCancel}
                    >
                     Cancel
                    </button>
                    <button 
-                   className="TodoForm-buttonTodoForm-button--add"
+                   className="TodoForm-button-add"
                    type="submit"
                    >
                       {props.submitText}

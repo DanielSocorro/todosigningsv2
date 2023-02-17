@@ -6,16 +6,24 @@ import { useTodos } from "../useTodos";
 function EditTodoPage() {
     const params = useParams();
     const id = Number(params.id);
-    const { stateUpdaters } = useTodos();
-    const { editTodo } = stateUpdaters;
-    return (
-        <TodoForm
-        label="Edit your signing"
-        submitText="Edit"
-        submitEvent={(newText) => editTodo(id, newText)}
-        />
 
-    );
+    const { state, stateUpdaters } = useTodos();
+    const { loading, getTodo } = state;
+    const { editTodo } = stateUpdaters;
+
+    if (loading) {
+        return <p>Loading...</p>
+    } else {
+      const todo = getTodo(id);
+      return (
+            <TodoForm
+            label="Edit your signing"
+            defaultTodoText={todo.text}
+            submitText="Edit signing"
+            submitEvent={(newText) => editTodo(id, newText)}
+            />
+        );
+    }   
 }
 
 export { EditTodoPage };
