@@ -50,7 +50,7 @@ function HomePage() {
           setSearchValue={setSearchValue} 
           />
       </TodoHeader>
-
+ 
       <TodoList
         error={error}
         loading={loading}
@@ -66,6 +66,7 @@ function HomePage() {
       >
 
         {todo => (
+          <>
         <TodoItem
             key={todo.id}
             text={todo.text}
@@ -81,10 +82,11 @@ function HomePage() {
             onComplete={() => completeTodo(todo.id)}
             onDelete={() => deleteTodo(todo.id)}
           />
+          </>
           )}
      </TodoList>
 
-     {/*  {!!openModal && (
+   {/*  {!!openModal && (
         <Modal>
           <TodoForm 
           addTodo={addTodo}
