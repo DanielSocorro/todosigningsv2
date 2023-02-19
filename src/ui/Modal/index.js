@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './Modal.css';
 
@@ -15,3 +15,4 @@ function Modal({ children }) {
 
 export { Modal };
 
+ */
