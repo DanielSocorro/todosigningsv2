@@ -9,9 +9,7 @@ import { TodoItem } from "../../ui/TodoItem";
 import { TodosError } from "../../ui/TodosError";
 import { TodosLoading } from "../../ui/TodosLoading";
 import { EmptyTodos } from "../../ui/EmptyTodos";
-import { TodoForm } from "../../ui/TodoForm";
 import { CreateTodoButton } from "../../ui/CreateTodoButton";
-import { Modal } from "../../ui/Modal";
 import { ChangeAlert } from "../../ui/ChangeAlert";
 
 function HomePage() {
@@ -50,7 +48,7 @@ function HomePage() {
           setSearchValue={setSearchValue} 
           />
       </TodoHeader>
- 
+
       <TodoList
         error={error}
         loading={loading}
