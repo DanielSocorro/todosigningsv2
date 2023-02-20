@@ -83,7 +83,7 @@ function HomePage() {
 
       <CreateTodoButton 
       onClick={() => navigate('/new')}
-     // setOpenModal={setOpenModal} 
+    
      />
 
       <ChangeAlert 
