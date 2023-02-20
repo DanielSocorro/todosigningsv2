@@ -22,13 +22,10 @@ function HomePage() {
     searchedTodos,
     totalTodos,
     completedTodos,
-    //openModal,
     searchValue,
   } = state;
 
   const {
-    //setOpenModal,
-    // addTodo,
     completeTodo,
     deleteTodo,
     setSearchValue,
@@ -83,15 +80,6 @@ function HomePage() {
           </>
           )}
      </TodoList>
-
-   {/*  {!!openModal && (
-        <Modal>
-          <TodoForm 
-          addTodo={addTodo}
-          setOpenModal={setOpenModal}
-          />
-        </Modal>
-      )} */}
 
       <CreateTodoButton 
       onClick={() => navigate('/new')}
