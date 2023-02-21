@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { TodoForm } from "../../ui/TodoForm";
 import { useTodos } from "../useTodos";
+import "./EditTodoPage.css";
 
 function EditTodoPage() {
     const location = useLocation();
@@ -25,12 +26,14 @@ function EditTodoPage() {
 
 
     return (
+      <div className='EditBackground'>
           <TodoForm
           label="Edit your signing"
           defaultTodoText={todoText}
           submitText="Edit signing"
           submitEvent={(newText) => editTodo(id, newText)}
           />
+          </div>
       );
 }
 
